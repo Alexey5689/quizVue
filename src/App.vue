@@ -1,11 +1,25 @@
 <template>
-  <Header/>
+  <transition name="fade">
+    <Model v-if="show"/>
+  </transition>
+  
   <div class="container">
-    <Quiz/>
+    <div class="head">
+        <Header/>
+    </div>
+    <div class="body">
+      <Quiz/>
+    </div>
+    <div class="foot">
+      <Footer/>
+    </div>
+    
+    
   </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import Quiz from './components/quizWind.vue';
   export default{
     components:{
@@ -13,11 +27,13 @@
     },
     data() {
         return{
-          answ:'',
+         
         }
     },
     computed:{
-     
+      ...mapState({
+            show: state => state.show, 
+        }),
     },
     methods:{
  

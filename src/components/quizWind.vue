@@ -1,81 +1,99 @@
 <template>
     <div class="quizPage">
-        <form class="quizWind" @submit.prevent="handlesubmit">
-            <div class="quiz-head">
-                <div class="quiz-head_question">
-                    {{ questions[currentQuestion - 1].question }}
+        <div v-if="this.stop" class="quizWindow">
+            <div class="resultWind">
+                <div class="result">
+                    <div class="resultHead">
+                       <b>Ваш Результат</b> 
+                    </div>
+                    <div class="resultInfo">
+                        {{rightAnsw}} правильных из {{questions.length}}
+                    </div>
                 </div>
-                <div class="quiz-head_questNumb">
-                    {{currentQuestion}} / {{ questions.length }}
-                </div>
-            </div>
-            <div class="quiz_options" v-for="option in questions[currentQuestion -1].options">
-                <lable class="quiz_option">
-                    <input type="radio" class="radiobtn">
-                    <div class="option">{{ option }}</div>
-                </lable>
-            </div>
-            <div class="quiz_answer">
-                <Button 
-                    type="submit" 
-                    :disabled="!this.selection"
-                    class="selectAnverBtn"
-                >{{ !this.selection  ? 'Выберите ответ' : 'Следующий вопрос' }}</Button>
-            </div>
-        </form>    
-            <!-- <div class="quiz-info">
-                <div class="quiz-question">
-                    {{ questions[currentQuestion - 1].question }}
-                </div>
-                <div class="quiz-question-numb">
-                    {{currentQuestion}} / {{ questions.length }}
+                <div class="againBtn">
+                    <Button
+                        @click="again"
+                        class="quizButtn"
+                    >Повторить?</Button>
                 </div>
             </div>
-            <div  class="quiz-selection" v-for="option in questions[currentQuestion -1].options">
-                <div class="questionOption">
-                    <input type="radio" class="radiobtn"/>
-                    {{ option }}
-                </div>  
+        </div>
+        <form  v-else class="quizWindow" @submit.prevent="handlesubmit">
+            <div class="quizWindWrapp">
+                <div class="quizHead">
+                    <div class="quizHead_left">
+                       <b> {{questions[currentQuestion].question }}</b>
+                    </div>
+                    <div class="quizHead_right">
+                       <b> {{currentQuestion + 1}} / {{ questions.length }}</b>
+                    </div>
+                </div>
+                <div class="quizBody">
+                    <label  v-for="(option, index) in this.questions[currentQuestion].options" class="quizOption"  :for="index">
+                        <div class="optionLeft">
+                            <input type="radio" class="radiobtn" :id="index" :value="index"  v-model="answ" @change="answer">
+                        </div>
+                        <div class="optionRight">
+                           {{ option }}
+                        </div>
+                    </label>
+                </div>
+                <div class="quizBottom">
+                    <Button
+                        type="submit" 
+                        :disabled="!this.selection"
+                        class="quizButtn"
+                    >{{ !this.selection  ? 'Выбери ответ' : (currentQuestion !== questions.length - 1 ? 'Следующий вопрос' : 'Результат' ) }}</Button>
+                </div>
             </div>
-            <div class="quiz-answer">
-                <Button 
-                    type="submit" 
-                    :disabled="!this.selection"
-                    class="selectAnverBtn"
-                >{{ !this.selection  ? 'Выберите ответ' : 'Следующий вопрос' }}</Button>
-            </div> -->
-        
+        </form>
     </div>
-    
-
 </template>
-
-
 <script>
-    import {mapState} from 'vuex';
+   import {mapState,} from 'vuex';
     export default{
         data(){
             return{
-                currentQuestion:1,
-                selection: 0,
+                currentQuestion: 0,
+                selection: null,
+                answ: null,
+                rightAnsw: 0,
+                stop:0,
+                right:null,
             }
         },
         methods:{
+            again(){
+                this.stop = 0;
+                this.rightAnsw = 0;
+                this. currentQuestion = 0;
+            },
+            answer(e){
+                this.selection = (e.target.value);
+                this.right = this.questions[this.currentQuestion].answer
+            },
             handlesubmit(){
-                if(this.currentQuestion !== this.questions.length) this.currentQuestion +=1;
-                
-            }
+                console.log(this.right);
+                console.log(this.selection);
+                if(this.currentQuestion !== this.questions.length -1){ this.currentQuestion +=1;}
+                else{this.stop = 1; }
+                if(this.answ === this.right){
+                    this.rightAnsw += 1;
+                    console.log('true');
+                }
+                else{
+                    console.log('false');
+                }
+                this.selection = null;
+                this.answ = null; 
+            },
         },
         computed:{
             ...mapState({
                 questions: state => state.quiz.questions,
-            })
+            }),
         }
     }
-
-
 </script>
-
 <style src="./styleComponents/styleQuizWind.css" scoped>
-
 </style>

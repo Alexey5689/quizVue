@@ -1,5 +1,6 @@
 .quizPage {
   width: 80%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,11 +12,24 @@
           align-items: center;
 }
 
-.quizWind {
-  width: 800px;
-  height: auto;
-  border-radius: 5px;
-  background: #27074b;
+.quizWindow {
+  width: 60%;
+  height: 80%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.quizWindWrapp {
+  width: 92%;
+  height: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,9 +39,67 @@
           flex-direction: column;
 }
 
-.quiz-head {
+.quizHead {
   width: 100%;
-  height: 50px;
+  height: 22%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.quizHead .quizHead_left {
+  width: 80%;
+  height: 100%;
+  font-family: "Harry";
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #7f0909;
+}
+.quizHead .quizHead_right {
+  width: 20%;
+  height: 100%;
+  font-family: "Harry";
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  color: #7f0909;
+}
+
+.quizBody {
+  width: 100%;
+  height: 68%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.quizBody .quizOption {
+  width: 98%;
+  height: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,44 +107,90 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  border-radius: 20px;
+  background: white;
+  border: 2px solid #FFC500;
 }
-
-.quiz-head_question {
-  width: 90%;
-  height: 100%;
-  color: white;
-  font-family: sans-serif;
-  font-size: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-left: 30px;
-}
-
-.quiz-head_questNumb {
+.quizBody .quizOption .optionLeft {
   width: 10%;
   height: 100%;
-  color: white;
-  font-family: sans-serif;
-  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.quizBody .quizOption .optionLeft .radiobtn {
+  width: 30%;
+  height: 30%;
+  accent-color: #7f0909;
+  cursor: pointer;
+}
+.quizBody .quizOption .optionRight {
+  width: 90%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  padding-right: 30px;
+  font-family: "Harry";
+  font-size: 30px;
+  color: #7f0909;
 }
 
-.quiz_options {
+.quizBottom {
   width: 100%;
-  height: auto;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.quizBottom .quizButtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 4px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 80%;
+  width: auto;
+  border: 2px solid #7f0909;
+  border-radius: 10px;
+  background-color: #FFC500;
+  color: #7f0909;
+  font-family: "Harry";
+  font-size: 25px;
+}
+.quizBottom .quizButtn:hover,
+.quizBottom .quizButtn:focus {
+  background-color: #7f0909;
+  color: #FFC500;
+}
+
+.resultWind {
+  width: 90%;
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.resultWind .result {
+  width: 100%;
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,62 +201,358 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
-
-.quiz_option {
-  width: 90%;
-  height: 40px;
-  font-size: 25px;
-  font-family: sans-serif;
-  color: white;
-  padding: 10px;
+.resultWind .result .resultHead {
+  font-family: "Harry";
+  font-size: 30px;
+  color: #7f0909;
+}
+.resultWind .result .resultInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #30075e;
-  border-radius: 10px;
-  margin: 10px 0px;
-  padding-left: 20px;
-}
-
-.radiobtn {
-  width: 2.5%;
-  height: 100%;
-}
-
-.option {
-  width: 97.5%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-left: 10px;
-}
-
-.quiz_answer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
-  height: 50px;
+  height: 50%;
+  font-family: "Harry";
+  font-size: 25px;
+  color: #7f0909;
+}
+.resultWind .againBtn {
+  width: 100%;
+  height: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-
-.selectAnverBtn {
-  width: 30%;
-  margin-left: 20px;
-  font-family: sans-serif;
+.resultWind .againBtn .quizButtn {
+  padding: 5px 4px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 60%;
+  width: auto;
+  border: 2px solid #7f0909;
   border-radius: 10px;
-  background-color: rgb(96, 137, 35);
-  color: rgb(255, 255, 255);
-  font-size: 20px;
+  background-color: #FFC500;
+  color: #7f0909;
+  font-family: "Harry";
+  font-size: 25px;
+}
+.resultWind .againBtn .quizButtn:hover,
+.resultWind .againBtn .quizButtn:focus {
+  background-color: #7f0909;
+  color: #FFC500;
 }
 
-button:disabled {
-  opacity: 0.5;
+@media screen and (max-width: 927px) {
+  .quizPage {
+    width: 50%;
+  }
+  .quizWindow {
+    width: 100%;
+  }
+  .quizBody {
+    height: 65%;
+  }
+  .quizBody .quizOption .optionLeft {
+    width: 10%;
+    font-size: 20px;
+  }
+  .quizBody .quizOption .optionLeft .radiobtn {
+    width: 35%;
+    height: 35%;
+  }
+  .quizBody .quizOption .optionRight {
+    width: 90%;
+    font-size: 20px;
+  }
+  .quizHead {
+    height: 25%;
+  }
+  .quizHead .quizHead_left {
+    font-size: 20px;
+  }
+  .quizHead .quizHead_right {
+    font-size: 20px;
+  }
+  .quizBottom {
+    height: 15%;
+  }
+  .quizBottom .quizButtn {
+    padding: 2px 5px;
+    font-size: 15px;
+  }
+  .resultWind .result {
+    height: 60%;
+  }
+  .resultWind .againBtn {
+    height: 30%;
+  }
+  .resultWind .againBtn .quizButtn {
+    padding: 2px 4px;
+    height: 60%;
+  }
+}
+@media screen and (max-width: 897px) {
+  .quizPage {
+    width: 50%;
+  }
+  .quizWindow {
+    width: 100%;
+  }
+  .quizBody {
+    height: 65%;
+  }
+  .quizBody .quizOption .optionLeft {
+    width: 10%;
+    font-size: 20px;
+  }
+  .quizBody .quizOption .optionLeft .radiobtn {
+    width: 35%;
+    height: 35%;
+  }
+  .quizBody .quizOption .optionRight {
+    width: 90%;
+    font-size: 20px;
+  }
+  .quizHead {
+    height: 25%;
+  }
+  .quizHead .quizHead_left {
+    font-size: 20px;
+  }
+  .quizHead .quizHead_right {
+    font-size: 20px;
+  }
+  .quizBottom {
+    height: 15%;
+  }
+  .quizBottom .quizButtn {
+    padding: 2px 5px;
+    font-size: 15px;
+  }
+  .resultWind .result {
+    height: 60%;
+  }
+  .resultWind .againBtn {
+    height: 30%;
+  }
+  .resultWind .againBtn .quizButtn {
+    padding: 2px 4px;
+    height: 60%;
+  }
+}
+@media screen and (max-width: 846px) {
+  .quizPage {
+    width: 50%;
+  }
+  .quizWindow {
+    width: 100%;
+  }
+  .quizBody {
+    height: 65%;
+  }
+  .quizBody .quizOption .optionLeft {
+    width: 10%;
+    font-size: 20px;
+  }
+  .quizBody .quizOption .optionLeft .radiobtn {
+    width: 35%;
+    height: 35%;
+  }
+  .quizBody .quizOption .optionRight {
+    width: 90%;
+    font-size: 20px;
+  }
+  .quizHead {
+    height: 25%;
+  }
+  .quizHead .quizHead_left {
+    font-size: 20px;
+  }
+  .quizHead .quizHead_right {
+    font-size: 20px;
+  }
+  .quizBottom {
+    height: 15%;
+  }
+  .quizBottom .quizButtn {
+    padding: 1px 5px;
+    font-size: 15px;
+  }
+  .resultWind .result {
+    height: 60%;
+  }
+  .resultWind .againBtn {
+    height: 30%;
+  }
+  .resultWind .againBtn .quizButtn {
+    padding: 1px 4px;
+    height: 60%;
+  }
+}
+@media screen and (max-width: 429px) {
+  .quizPage {
+    width: 95%;
+  }
+  .quizWindow {
+    width: 100%;
+  }
+  .quizBody {
+    height: 65%;
+  }
+  .quizBody .quizOption .optionLeft {
+    width: 20%;
+    font-size: 25px;
+  }
+  .quizBody .quizOption .optionLeft .radiobtn {
+    width: 30%;
+    height: 30%;
+  }
+  .quizBody .quizOption .optionRight {
+    font-size: 28px;
+    width: 80%;
+  }
+  .quizHead {
+    height: 20%;
+  }
+  .quizHead .quizHead_left {
+    font-size: 25px;
+  }
+  .quizHead .quizHead_right {
+    font-size: 25px;
+  }
+  .quizBottom {
+    height: 12%;
+  }
+  .quizBottom .quizButtn {
+    padding: 3px 10px;
+    font-size: 25px;
+  }
+  .resultWind .result {
+    height: 50%;
+  }
+  .resultWind .againBtn {
+    height: 20%;
+  }
+  .resultWind .againBtn .quizButtn {
+    padding: 2px 4px;
+    height: 40%;
+  }
+}
+@media screen and (max-width: 415px) {
+  .quizPage {
+    width: 95%;
+  }
+  .quizWindow {
+    width: 100%;
+  }
+  .quizBody {
+    height: 65%;
+  }
+  .quizBody .quizOption .optionLeft {
+    width: 20%;
+    font-size: 25px;
+  }
+  .quizBody .quizOption .optionLeft .radiobtn {
+    width: 30%;
+    height: 30%;
+  }
+  .quizBody .quizOption .optionRight {
+    font-size: 28px;
+    width: 80%;
+  }
+  .quizHead {
+    height: 20%;
+  }
+  .quizHead .quizHead_left {
+    font-size: 25px;
+  }
+  .quizHead .quizHead_right {
+    font-size: 25px;
+  }
+  .quizBottom {
+    height: 13%;
+  }
+  .quizBottom .quizButtn {
+    padding: 4px 10px;
+    font-size: 25px;
+  }
+  .resultWind .result {
+    height: 50%;
+  }
+  .resultWind .againBtn {
+    height: 20%;
+  }
+  .resultWind .againBtn .quizButtn {
+    padding: 1px 4px;
+    height: 40%;
+  }
+}
+@media screen and (max-width: 394px) {
+  .quizPage {
+    width: 95%;
+  }
+  .quizWindow {
+    width: 100%;
+  }
+  .quizBody {
+    height: 64%;
+  }
+  .quizBody .quizOption .optionLeft {
+    width: 15%;
+    font-size: 18px;
+  }
+  .quizBody .quizOption .optionLeft .radiobtn {
+    width: 40%;
+    height: 40%;
+  }
+  .quizBody .quizOption .optionRight {
+    font-size: 28px;
+    width: 85%;
+  }
+  .quizHead {
+    height: 22%;
+  }
+  .quizHead .quizHead_left {
+    width: 79%;
+    font-size: 25px;
+  }
+  .quizHead .quizHead_right {
+    width: 21%;
+    font-size: 25px;
+  }
+  .quizBottom {
+    height: 13%;
+  }
+  .quizBottom .quizButtn {
+    padding: 4px 4px;
+    font-size: 25px;
+  }
+  .resultWind .result {
+    height: 50%;
+  }
+  .resultWind .againBtn {
+    height: 20%;
+  }
+  .resultWind .againBtn .quizButtn {
+    padding: 1px 4px;
+    height: 40%;
+  }
 }

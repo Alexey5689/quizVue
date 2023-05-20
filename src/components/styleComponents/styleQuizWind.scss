@@ -1,95 +1,523 @@
+$bg:#FFC500;
+$col:#7f0909;
+$ff:'Harry';
+$fs844:20px;
+$fsnew:18px;
+$fs:25px;
+$fss:30px;
+$fsss:40px;
+$fsM320: 18px;
+$fsM480: 22px;
+$fsM768: 25px;
+$fsM844: 20px;
+$fsM390: 28px;
+$fc:white;
 .quizPage{
     width: 80%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.quizWind{
-    width: 800px;
-    height: auto;
-    border-radius: 5px;
-    background:#27074b;
+.quizWindow{
+    width: 60%;
+    height: 80%;
+    // border:2px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quizWindWrapp{
+    width: 92%;
+    height: 90%;
     display: flex;
     flex-direction: column;
 }
-.quiz-head{
+.quizHead{
     width: 100%;
-    height: 50px;
-    display:flex;
-    flex-direction: row;
+    height: 22%;
+    display: flex; 
+    .quizHead_left{
+        width: 80%;
+        height: 100%;
+        font-family: $ff;
+        font-size: $fss;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color:$col;
+    }
+    .quizHead_right{
+        width: 20%;
+        height: 100%;
+        font-family: $ff;
+        font-size: $fss;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        color:$col;
+    }
 }
-.quiz-head_question{
-    width: 90%;
-    height: 100%;
-    color: white;
-    font-family: sans-serif;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-}
-.quiz-head_questNumb{
-    width: 10%;
-    height: 100%;
-    color: white;
-    font-family: sans-serif;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding-right: 30px;
-}
-.quiz_options{
+.quizBody{
     width: 100%;
-    height: auto;
+    height: 68%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content:space-around;
+    .quizOption{
+        width: 98%;
+        height: 25%;
+        display: flex;
+        flex-direction: row;
+        border-radius: 20px;
+        background: white;
+        border: 2px solid $bg;
+
+        .optionLeft{
+            width: 10%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .radiobtn{
+                width: 30%;
+                height: 30%;
+                accent-color: $col;
+                cursor: pointer;
+            }
+        }
+        .optionRight{
+            width: 90%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-family: $ff;
+            font-size: $fss;
+            color:$col;
+        }  
+    }
 }
-.quiz_option{
-    width: 90%;
-    height: 40px;
-    font-size: 25px;
-    font-family: sans-serif;
-    color:white;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    background: #30075e;
-    border-radius: 10px;
-    margin: 10px 0px;
-    padding-left: 20px;
-}
-.radiobtn{
-    width: 2.5%;
-    height: 100%;
-}
-.option{
-    width: 97.5%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-}
-.quiz_answer{
+.quizBottom{
     width: 100%;
-    height: 50px;
+    height: 15%;
     display: flex;
+    justify-content: flex-start;
+    .quizButtn{
+        display: flex;
+        padding: 5px 4px ;
+        align-self: center;
+        height: 80%;
+        width: auto;
+        border: 2px solid $col;
+        border-radius: 10px;
+        background-color: $bg;
+        color:$col;
+        font-family: $ff;
+        font-size:$fs;
+    }
+    .quizButtn:hover,
+    .quizButtn:focus{
+        background-color:$col ;
+        color:$bg;
+    }
+}
+.resultWind{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    .result{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        .resultHead{
+            font-family: $ff;
+            font-size: $fss;
+            color:$col;
+        }
+        .resultInfo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            font-family: $ff;
+            font-size: $fs;
+            color:$col;
+        }
+    }
+    .againBtn{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .quizButtn{
+            padding: 5px 4px;
+            align-self: center;
+            height: 60%;
+            width: auto;
+            border: 2px solid $col;
+            border-radius: 10px;
+            background-color: $bg;
+            color:$col;
+            font-family: $ff;
+            font-size:$fs;
+        }
+        .quizButtn:hover,
+        .quizButtn:focus{
+            background-color:$col ;
+            color:$bg;
+        }
+    }
+}
+
+@media screen and (max-width:927px){
+    .quizPage{
+        width: 50%;
+    }
+    .quizWindow{
+        width: 100%;
+    }
+    .quizBody{
+        height: 65%;
+        .quizOption{
+            .optionLeft{
+                width: 10%;
+                font-size: $fsM844;
+                .radiobtn{
+                    width: 35%;
+                    height: 35%;
+                }
+            }
+            .optionRight{
+                width: 90%;
+                font-size: $fsM844;
+            }  
+        }
+    }
+    .quizHead{
+        height: 25%;
+        .quizHead_left{
+            font-size: $fsM844;
+        }
+        .quizHead_right{
+            font-size: $fsM844;
+        }
+    }  
+    .quizBottom{
+        height: 15%;
+        .quizButtn{
+           padding: 2px 5px;
+           font-size: 15px;
+        }
+    } 
+    .resultWind{
+        .result{
+            height: 60%;
+        }
+        .againBtn{
+            height: 30%;
+            .quizButtn{
+                padding: 2px 4px;
+                height: 60%;
+            }
+        }
+    } 
 }
 
 
-.selectAnverBtn{
-    width: 30%;
-    margin-left: 20px;
-    font-family: sans-serif;
-    border-radius: 10px;
-    background-color: rgb(96, 137, 35);
-    color:rgb(255, 255, 255);
-    font-size: 20px;
+
+@media screen and (max-width:897px){
+    .quizPage{
+        width: 50%;
+    }
+    .quizWindow{
+        width: 100%;
+    }
+    .quizBody{
+        height: 65%;
+        .quizOption{
+            .optionLeft{
+                width: 10%;
+                font-size: $fsM844;
+                .radiobtn{
+                    width: 35%;
+                    height: 35%;
+                }
+            }
+            .optionRight{
+                width: 90%;
+                font-size: $fsM844;
+            }  
+        }
+    }
+    .quizHead{
+        height: 25%;
+        .quizHead_left{
+            font-size: $fsM844;
+        }
+        .quizHead_right{
+            font-size: $fsM844;
+        }
+    }  
+    .quizBottom{
+        height: 15%;
+        .quizButtn{
+           padding: 2px 5px;
+           font-size: 15px;
+        }
+    } 
+    .resultWind{
+        .result{
+            height: 60%;
+        }
+        .againBtn{
+            height: 30%;
+            .quizButtn{
+                padding: 2px 4px;
+                height: 60%;
+            }
+        }
+    } 
 }
-button:disabled {
-	opacity: 0.5;
+
+
+
+@media screen and (max-width:846px){
+    .quizPage{
+        width: 50%;
+    }
+    .quizWindow{
+        width: 100%;
+    }
+    .quizBody{
+        height: 65%;
+        .quizOption{
+            .optionLeft{
+                width: 10%;
+                font-size: $fsM844;
+                .radiobtn{
+                    width: 35%;
+                    height: 35%;
+                }
+            }
+            .optionRight{
+                width: 90%;
+                font-size: $fsM844;
+            }  
+        }
+    }
+    .quizHead{
+        height: 25%;
+        .quizHead_left{
+            font-size: $fsM844;
+        }
+        .quizHead_right{
+            font-size: $fsM844;
+        }
+    }  
+    .quizBottom{
+        height: 15%;
+        .quizButtn{
+           padding: 1px 5px;
+           font-size: 15px;
+        }
+    } 
+    .resultWind{
+        .result{
+            height: 60%;
+        }
+        .againBtn{
+            height: 30%;
+            .quizButtn{
+                padding: 1px 4px;
+                height: 60%;
+            }
+        }
+    } 
 }
+
+//iphone 12 pro max
+@media screen and (max-width: 429px){
+    .quizPage{
+        width: 95%;
+    }
+    .quizWindow{
+        width: 100%;
+    }
+    .quizBody{
+        height: 65%;
+        .quizOption{
+            .optionLeft{
+                width: 20%;
+                font-size: $fs;
+                .radiobtn{
+                    width: 30%;
+                    height: 30%;
+                }
+            }
+            .optionRight{
+                font-size: $fsM390;
+                width: 80%;
+            }  
+        }
+    }
+    .quizHead{
+        height: 20%;
+        .quizHead_left{
+            font-size: $fs;
+        }
+        .quizHead_right{
+            font-size: $fs;
+        }
+    }  
+    .quizBottom{
+        height: 12%;
+        .quizButtn{
+            padding: 3px 10px;
+            font-size: $fs;
+        }
+    } 
+    .resultWind{
+        .result{
+            height: 50%;
+        }
+        .againBtn{
+            height: 20%;
+            .quizButtn{
+                padding: 2px 4px;
+                height: 40%;
+            }
+        }
+    } 
+}
+
+
+
+//iphone xr
+@media screen and (max-width:415px){
+    .quizPage{
+        width: 95%;
+    }
+    .quizWindow{
+        width: 100%;
+    }
+    .quizBody{
+        height: 65%;
+        .quizOption{
+            .optionLeft{
+                width: 20%;
+                font-size: $fs;
+                .radiobtn{
+                    width: 30%;
+                    height: 30%;
+                }
+            }
+            .optionRight{
+                font-size: $fsM390;
+                width: 80%;
+            }  
+        }
+    }
+    .quizHead{
+        height: 20%;
+        .quizHead_left{
+            font-size: $fs;
+        }
+        .quizHead_right{
+            font-size: $fs;
+        }
+    }  
+    .quizBottom{
+        height: 13%;
+        .quizButtn{
+            padding: 4px 10px;
+            font-size: $fs;
+        }
+    } 
+    .resultWind{
+        .result{
+            height: 50%;
+        }
+        .againBtn{
+            height: 20%;
+            .quizButtn{
+                padding: 1px 4px;
+                height: 40%;
+            }
+        }
+    } 
+}
+
+
+
+
+//iphone 12 pro
+@media screen and (max-width:394px){
+    .quizPage{
+        width: 95%;
+    }
+    .quizWindow{
+        width: 100%;
+    }
+    .quizBody{
+        height: 64%;
+        .quizOption{
+            .optionLeft{
+                width: 15%;
+                font-size: $fsnew;
+                .radiobtn{
+                    width: 40%;
+                    height: 40%;
+                }
+            }
+            .optionRight{
+                font-size: $fsM390;
+                width: 85%;
+            }  
+        }
+    }
+    .quizHead{
+        height: 22%;
+        .quizHead_left{
+            width: 79%;
+            font-size: $fs;
+        }
+        .quizHead_right{
+            width: 21%;
+            font-size: $fs;
+        }
+    }  
+    .quizBottom{
+        height: 13%;
+        .quizButtn{
+            padding:4px 4px;
+            font-size: $fs;
+        }
+    } 
+    .resultWind{
+        .result{
+            height: 50%;
+        }
+        .againBtn{
+            height: 20%;
+            .quizButtn{
+                // padding: 0;
+                padding: 1px 4px ;
+                height: 40%;
+            }
+        }
+    } 
+             
+}
+
+
 
 
 
